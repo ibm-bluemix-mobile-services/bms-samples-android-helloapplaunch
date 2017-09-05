@@ -1,1 +1,1 @@
-include ':app', ':engage-client-android-recent'
+include ':app', ':engage-client-android'
