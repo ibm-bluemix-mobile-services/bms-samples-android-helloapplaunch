@@ -19,6 +19,11 @@ android {
     }
 }
 
+configurations.all {
+    // Don't cache changing modules at all.
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -27,7 +32,9 @@ dependencies {
     compile 'com.android.support:design:25.0.0'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
-    compile project(':engage-client-android')
+    compile 'com.squareup.picasso:picasso:+'
+    compile 'com.engage:engage-client-android:2@aar'
+  //  compile project(':engage-client-android-recent')
     compile 'com.ibm.mobilefirstplatform.clientsdk.android:core:[2.0.0,3.0.0)'
     testCompile 'junit:junit:4.12'
 }
