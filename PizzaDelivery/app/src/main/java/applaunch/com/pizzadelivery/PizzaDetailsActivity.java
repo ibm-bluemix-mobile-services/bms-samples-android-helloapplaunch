@@ -9,8 +9,6 @@ import com.applaunch.api.AppLaunch;
 
 import java.util.ArrayList;
 
-import applaunch.com.pizzadelivery.R;
-
 public class PizzaDetailsActivity extends AppCompatActivity {
 
     @Override
@@ -20,8 +18,10 @@ public class PizzaDetailsActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.touchid_checkout);
         button.setVisibility(View.GONE);
         try{
-            if(AppLaunch.getInstance().isFeatureEnabled("sadas")){
-                final String text = AppLaunch.getInstance().getVariableForFeature("sadas","sds");
+            //include the feature code you wish to enable here
+            if(AppLaunch.getInstance().isFeatureEnabled("<your feature code>")){
+                //check for a property of the feature you wish you use
+                final String text = AppLaunch.getInstance().getPropertyOfFeature("<your feature code>","<property code>");
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -48,7 +48,8 @@ public class PizzaDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ArrayList<String> metrics = new ArrayList<String>();
-                metrics.add("_w7xos3fqh");
+                //metric code you wish to measure
+                metrics.add("<metric code>");
                 AppLaunch.getInstance().sendMetrics(metrics);
             }
         });
