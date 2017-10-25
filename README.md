@@ -93,6 +93,7 @@ Where `bluemixRegionSuffix` specifies the location where the app is hosted. You 
 The `appGUID` is the app launch app GUID value, while `clientSecret` is the appLaunch client secret value which can be obtained from the service console.
 
 **Note: initApp should be the first call in the application.**
+Edit the sample applications ```MainActivity.java``` to update your service details
 
 ### Register
 To register the user invoke ```AppLaunch.getInstance().registerUser()``` api: 
@@ -135,7 +136,8 @@ Use the ` AppLaunch.getInstance().isFeatureEnabled()` API to check if a particul
      AppLaunch.getInstance().isFeatureEnabled(featureCode)
  
  **Note:Throws AppLaunchException if isFeatureEnabled is invoked before getActions() api.**    
-        
+Edit the sample applications ```PizzaDetailsActivity.java``` to update your feature code
+
 ### Get variable for feature
 Use the `AppLaunch.getInstance().getVariableForFeature()` to fetch the variable corresponding to a feature
 
@@ -145,6 +147,8 @@ Use the `AppLaunch.getInstance().getVariableForFeature()` to fetch the variable 
 This api returns the varaible corresponding to the variable code for a particular feature.
 
  **Note:Throws AppLaunchException if getVariableForFeature is invoked before getActions() api.** 
+ 
+Edit the sample applications ```PizzaDetailsActivity.java``` to update your featurecode and variablecode
 
 ## Metrics
 
@@ -155,6 +159,8 @@ To send metrics to the server use the `AppLaunch.getInstance().sendMetrics();` a
 ```
  AppLaunch.getInstance().sendMetrics("metriccode");
 ```
+Edit the sample applications ```PizzaDetailsActivity.java``` to update your metriccode
+
 ## Applaunch Android SDK
 
 For more information on the Applaunch Android SDK api, visit - [AppLaunch Android SDK](https://github.com/ibm-bluemix-mobile-services/bms-clientsdk-android-applaunch/blob/development/README.md#prerequisites)
